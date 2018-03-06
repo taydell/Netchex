@@ -1,0 +1,16 @@
+{
+  "name": "netchex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Taylor Nichols",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "react-date-range": "^0.9.4",
+    "requirejs": "^2.3.5"
+  }
+}

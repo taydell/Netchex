@@ -1,0 +1,11 @@
+C:\Users\Taylor\Documents\Visual Studio 2017\Projects\Netchex_api\Netchex_api\bin\Debug\netcoreapp2.0\Netchex_api.deps.json
+C:\Users\Taylor\Documents\Visual Studio 2017\Projects\Netchex_api\Netchex_api\bin\Debug\netcoreapp2.0\Netchex_api.runtimeconfig.json
+C:\Users\Taylor\Documents\Visual Studio 2017\Projects\Netchex_api\Netchex_api\bin\Debug\netcoreapp2.0\Netchex_api.runtimeconfig.dev.json
+C:\Users\Taylor\Documents\Visual Studio 2017\Projects\Netchex_api\Netchex_api\bin\Debug\netcoreapp2.0\Netchex_api.dll
+C:\Users\Taylor\Documents\Visual Studio 2017\Projects\Netchex_api\Netchex_api\obj\Debug\netcoreapp2.0\Netchex_api.csprojResolveAssemblyReference.cache
+C:\Users\Taylor\Documents\Visual Studio 2017\Projects\Netchex_api\Netchex_api\obj\Debug\netcoreapp2.0\Netchex_api.csproj.CoreCompileInputs.cache
+C:\Users\Taylor\Documents\Visual Studio 2017\Projects\Netchex_api\Netchex_api\obj\Debug\netcoreapp2.0\Netchex_api.AssemblyInfoInputs.cache
+C:\Users\Taylor\Documents\Visual Studio 2017\Projects\Netchex_api\Netchex_api\obj\Debug\netcoreapp2.0\Netchex_api.AssemblyInfo.cs
+C:\Users\Taylor\Documents\Visual Studio 2017\Projects\Netchex_api\Netchex_api\bin\Debug\netcoreapp2.0\Netchex_api.pdb
+C:\Users\Taylor\Documents\Visual Studio 2017\Projects\Netchex_api\Netchex_api\obj\Debug\netcoreapp2.0\Netchex_api.dll
+C:\Users\Taylor\Documents\Visual Studio 2017\Projects\Netchex_api\Netchex_api\obj\Debug\netcoreapp2.0\Netchex_api.pdb
