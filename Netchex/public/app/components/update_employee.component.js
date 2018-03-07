@@ -86,17 +86,17 @@ window.UpdateEmployeeComponent = React.createClass({
             contentType: 'application/json',
             data: JSON.stringify(form_data),
             success: function (response) {
-                this.setState({ successCreation: response['message'] });
+                this.setState({ successUpdate: "Employee was updated." });
 
             }.bind(this),
             error: function (xhr, resp, text) {
+                this.state({ successUpdate: "Unable to update employee."});
                 console.log(xhr, resp, text);
-            }
+            }.bind(this)
         });
 
         e.preventDefault();
     },
-
     render: function () {
         return (
             <div>
@@ -117,7 +117,7 @@ window.UpdateEmployeeComponent = React.createClass({
                 <a href='#'
                     onClick={() => this.props.changeAppMode('read')}
                     className='btn btn-primary margin-bottom-1em'>
-                    Read Employee
+                    Back
             </a>
 
                 <form onSubmit={this.onSave}>
@@ -148,27 +148,16 @@ window.UpdateEmployeeComponent = React.createClass({
                             <tr>
                                 <td>Start Date</td>
                                 <td>
-                                    <textarea
+                                    <input 
                                         type='date'
                                         className='form-control'
                                         required
-                                        value={this.state.startDate}
+                                        value={this.props.formatDate(this.state.startDate,"-")}
                                         onChange={this.onStartDateChange}>
-                                    </textarea>
+                                    </input>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>End Date</td>
-                                <td>
-                                    <textarea
-                                        type='date'
-                                        className='form-control'
-                                        required
-                                        value={this.state.endDate}
-                                        onChange={this.onEndDateChange}>
-                                    </textarea>
-                                </td>
-                            </tr>
+
                             <tr>
                                 <td>Wage ($)</td>
                                 <td>
@@ -189,8 +178,10 @@ window.UpdateEmployeeComponent = React.createClass({
                                         className='form-control'
                                         required
                                         value={this.state.wageTypeId}
-                                        onChange={this.onWageTypeIdChange}>
+                                        onChange={this.onWageTypeIdChange}
+                                        defaultValue={this.state.wageType}>
 
+                                        <option value={this.state.wageTypeId}>{this.state.wageType}</option>
                                         <option value="0">Hourly</option>
                                         <option value="1">Salary</option>
                                     </select>
@@ -206,7 +197,7 @@ window.UpdateEmployeeComponent = React.createClass({
                                         required
                                         value={this.state.payFrequencyId}
                                         onChange={this.onPayFrequencyIdChange}>
-
+                                        <option value={this.state.payFrequencyId}>{this.state.payFrequency}</option>
                                         <option value="1">Weekly</option>
                                         <option value="2">Biweekly</option>
                                         <option value="4">Monthly</option>

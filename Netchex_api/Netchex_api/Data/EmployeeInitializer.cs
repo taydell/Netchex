@@ -40,7 +40,7 @@ namespace Netchex_api.Data
 
             var employees = new List<Employee>
             {
-                new Employee{ FirstName="Taylor", LastName="Nichols", Wage=28.00m, StartDate = DateTime.Today, WageTypeId = 1, PayFrequencyId = 1}
+                new Employee{ FirstName="Taylor", LastName="Nichols", Wage=70000.00m, StartDate = DateTime.Today.Date, WageTypeId = 1, PayFrequencyId = 1}
             };
 
             employees.ForEach(employee => context.Employee.Add(employee));

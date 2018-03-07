@@ -4,8 +4,7 @@
             <tr>
                 <td>{this.props.employee.firstName}</td>
                 <td>{this.props.employee.lastName}</td>
-                <td>{this.props.employee.startDate}</td>
-                <td>{this.props.employee.endDate}</td>
+                <td>{this.props.formatDate(this.props.employee.startDate, "/")}</td>
                 <td>${parseFloat(this.props.employee.wage).toFixed(2)}</td>
                 <td>{this.props.employee.wageType}</td>
                 <td>{this.props.employee.payFrequency}</td>

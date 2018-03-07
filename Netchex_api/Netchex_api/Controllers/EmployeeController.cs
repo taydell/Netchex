@@ -67,7 +67,6 @@ namespace Netchex_api.Controllers
             {
                 return BadRequest();
             }
-
             _context.Entry(employee).State = EntityState.Modified;
 
             try
@@ -97,7 +96,6 @@ namespace Netchex_api.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             _context.Employee.Add(employee);
             await _context.SaveChangesAsync();
 

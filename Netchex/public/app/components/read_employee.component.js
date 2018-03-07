@@ -19,7 +19,7 @@
     
     render: function () {
         var filteredEmployees = this.state.employees;
-        $('.page-header h1').text('Read Employees');
+        $('.page-header h1').text('Employees');
 
         return (
             <div className='overflow-hidden'>
@@ -27,7 +27,8 @@
 
                 <EmployeeTable
                     employees={filteredEmployees}
-                    changeAppMode={this.props.changeAppMode} />
+                    changeAppMode={this.props.changeAppMode}
+                    formatDate={this.props.formatDate}/>
             </div>
         );
     }

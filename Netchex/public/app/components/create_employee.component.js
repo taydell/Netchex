@@ -62,7 +62,6 @@
     },
     
     onSave: function (e) {
-        debugger;
         var form_data = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -80,7 +79,8 @@
             contentType: 'application/json',
             data: JSON.stringify(form_data),
             success: function (response) {
-                this.setState({ successCreation: response['message'] });
+                this.setState({ successCreation: "Employee was created." });
+
                 this.setState({ firstName: "" });
                 this.setState({ lastName: "" });
                 this.setState({ startDate: "" });
@@ -91,9 +91,10 @@
                 this.setState({ selectedEmployeeId: -1 });
 
             }.bind(this),
-            error: function (xhr, resp, text) {
+            error:  function (xhr, resp, text){
+                this.setState({ successCreation: "Unable to create employee."})
                 console.log(xhr, resp, text);
-            }
+            }.bind(this)
         });
 
         e.preventDefault();
@@ -124,7 +125,7 @@
 
                 <a href='#'
                     onClick={() => this.props.changeAppMode('read')}
-                    className='btn btn-primary margin-bottom-1em'> Read Employee
+                    className='btn btn-primary margin-bottom-1em'> Back
                 </a>
                 
                 <form onSubmit={this.onSave}>
@@ -157,24 +158,13 @@
                             <tr>
                                 <td>Start Date</td>
                                 <td>
-                                    <textarea
+                                    <input
                                         type='date'
                                         className='form-control'
                                         required
                                         value={this.state.startDate}
                                         onChange={this.onStartDateChange}>
-                                    </textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>End Date</td>
-                                <td>
-                                    <textarea
-                                        type='date'
-                                        className='form-control'
-                                        value={this.state.endDate}
-                                        onChange={this.onEndDateChange}>
-                                    </textarea>
+                                    </input>
                                 </td>
                             </tr>
 

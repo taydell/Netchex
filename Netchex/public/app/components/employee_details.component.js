@@ -39,7 +39,7 @@ window.EmployeeDetailsComponent = React.createClass({
             });
         }.bind(this));
 
-        $('.page-header h1').text('Read Employee');
+        $('.page-header h1').text('Employee Details');
     },
 
     onStartPayDateChange: function (e) {
@@ -85,7 +85,7 @@ window.EmployeeDetailsComponent = React.createClass({
     },
 
     setHourlyPayTotalAmount: function (weeks, payWeeks) {
-        var payAmount = (40 * this.state.wageId) * payWeeks;
+        var payAmount = (40 * this.state.wage) * payWeeks;
         this.setState({ payedAmount: payAmount.toFixed(2) });
     },
 
@@ -103,7 +103,7 @@ window.EmployeeDetailsComponent = React.createClass({
                 <a href='#'
                     onClick={() => this.props.changeAppMode('read')}
                     className='btn btn-primary margin-bottom-1em'>
-                    Read Employees
+                    Back
             </a>
 
                 <form onSubmit={this.onSave}>
@@ -121,12 +121,7 @@ window.EmployeeDetailsComponent = React.createClass({
 
                             <tr>
                                 <td>Start Date</td>
-                                <td>{this.state.startDate}</td>
-                            </tr>
-
-                            <tr>
-                                <td>End Date</td>
-                                <td>{this.state.endDate}</td>
+                                <td>{this.props.formatDate(this.state.startDate, "/")}</td>
                             </tr>
 
                             <tr>
@@ -144,11 +139,6 @@ window.EmployeeDetailsComponent = React.createClass({
                                 <td>{this.state.payFrequency}</td>
                             </tr>
 
-                            <tr>
-                                <td>Payed Amount ($)</td>
-                                <td>{this.state.payedAmount}</td>
-                            </tr>
-
                         </tbody>
                     </table>
                     <div>
@@ -157,27 +147,32 @@ window.EmployeeDetailsComponent = React.createClass({
                                 <tr>
                                     <td>Start Pay Date Range</td>
                                     <td>
-                                        <textarea
+                                        <input
                                             type='date'
                                             className='form-control'
                                             required
                                             value={this.state.startPayDate}
                                             onChange={this.onStartPayDateChange}>
-                                        </textarea>
+                                        </input>
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td>End Pay Date Range</td>
                                     <td>
-                                        <textarea
+                                        <input
                                             type='date'
                                             className='form-control'
                                             required
                                             value={this.state.endPayDate}
                                             onChange={this.onEndPayDateChange}>
-                                        </textarea>
+                                        </input>
                                     </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Calculated Pay ($)</td>
+                                    <td>{this.state.payedAmount}</td>
                                 </tr>
 
                                 <tr>

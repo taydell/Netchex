@@ -6,7 +6,8 @@
                     <EmployeeRow
                         key={i}
                         employee={employee}
-                        changeAppMode={this.props.changeAppMode} />
+                        changeAppMode={this.props.changeAppMode}
+                        formatDate={this.props.formatDate}/>
                 );
             }.bind(this));
 
@@ -20,7 +21,6 @@
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Start Date</th>
-                            <th>End Date</th>
                             <th>Wage</th>
                             <th>Wage Type</th>
                             <th>Pay Frequency</th>
